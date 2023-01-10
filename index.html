@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Hands On 3</title>
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark sticky-top" data-bs-theme="dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html">Kape Kopi</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="login.html">Log In</a>
+              </li>
+              
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Menu
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item"  href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Inventory</a></li>
+                    <li><a class="dropdown-item" href="create.html">Create</a></li>
+                    <li><a class="dropdown-item" href="edit.html">Edit</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <div class="container ">
+        <h1>Menu List</h1>
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-xs-12 row">
+                <div class="row row-cols-lg-2 row-cols-md-1 row-cols-sm-1 row-cols-xs-1 ">
+                    <div class="col ">
+                        
+                      <div class="card m-1 shadow">
+                        <h2 class="card-title m-2 text-primary">Espresso</h2>
+                        <img src="https://www.nescafe.com/mena/sites/default/files/GettyImages-595948372_desktop.jpg" class="card-img-top p-2" alt="...">
+                        <div class="card-body">
+                          
+                          <p class="card-text">Price: 60 PHP</p>
+                          <p class="text-primary">Hot</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="card m-1 shadow">
+                        <h2 class="card-title m-2 text-primary">Latte</h2>
+                        <img src="https://athome.starbucks.com/sites/default/files/2022-04/CAH_ClassicLatte_Hero_0.jpg" class="card-img-top p-2" alt="...">
+                        <div class="card-body">
+                          
+                          <p class="card-text">Price: 80 PHP</p>
+                          <p class="text-primary">Hot/Cold</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="card m-1 shadow">
+                        <h2 class="card-title m-2 text-primary">Cappuccino</h2>
+                        <img src="https://www.perfectbrew.com/wp-content/uploads/2021/07/dry-cappuccino-easy-recipe-XS.jpg" class="card-img-top p-2" alt="...">
+                        <div class="card-body">
+                          
+                          <p class="card-text">Price: 80 PHP</p>
+                          <p class="text-primary">Hot/Cold</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-xs-12  row">
+                <div class="row row-cols-lg-2 row-cols-md-1 row-cols-sm-1 row-cols-xs-1 ">
+                    <div class="col">
+                      <div class="card m-1 shadow">
+                        <h2 class="card-title m-2 text-primary">Americano</h2>
+                        <img src="https://www.nescafe.com/sites/default/files/2021-10/IcedAmericano_4_1212x680.jpg_.jpg" class="card-img-top p-2" alt="...">
+                        <div class="card-body">
+                          
+                          <p class="card-text">Price: 60 PHP</p>
+                          <p class="text-primary">Hot/Cold</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="card m-1 shadow">
+                        <h2 class="card-title m-2 text-primary">Frappe</h2>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRf7VvmoEIX2jB6u7nLvcSp6wTp3VAfqe4-A&usqp=CAU" class="card-img-top p-2" alt="...">
+                        <div class="card-body">
+                          
+                          <p class="card-text">Price: 110 PHP</p>
+                          <p class="text-primary">Cold</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="card m-1 shadow">
+                        <h2 class="card-title m-2 text-primary">Cold Brew</h2>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVt-QmkhMmRb9K8lhUgkEiIQTvYjQR3bit5w&usqp=CAU" class="card-img-top p-2" alt="...">
+                        <div class="card-body">
+                          
+                          <p class="card-text">Price: 80 PHP</p>
+                          <p class="text-primary">Cold</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+
+        
+          
+        
+    </div>
+    <footer class="navbar fixed-bottom bg-body-tertiary bg-dark" data-bs-theme="dark">
+        <div class="container-fluid justify-content-center">
+          <a class="navbar-brand justify-content-center" href="#">Footer</a>
+        </div>
+    </footer>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th scope="col">Item Id</th>
+                        <th scope="col">Item Name</th>
+                        <th scope="col">Item Price</th>
+                        <th scope="col">Item Category</th>
+                        <th scope="col">Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">E1</th>
+                        <td>Espresso</td>
+                        <td>60</td>
+                        <td>Hot</td>
+                        <td>
+                            <button type="button" class="btn btn-info">Edit</button>
+                            <button type="button" class="btn btn-danger">Delete</button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">E2</th>
+                        <td>Latte</td>
+                        <td>80</td>
+                        <td>Hot/Cold</td>
+                        <td>
+                            <button type="button" class="btn btn-info">Edit</button>
+                            <button type="button" class="btn btn-danger">Delete</button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">E3</th>
+                        <td>Cappuccino</td>
+                        <td>80</td>
+                        <td>Hot/Cold</td>
+                        <td>
+                            <button type="button" class="btn btn-info">Edit</button>
+                            <button type="button" class="btn btn-danger">Delete</button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">C1</th>
+                        <td>Americano</td>
+                        <td>60</td>
+                        <td>Hot/Cold</td>
+                        <td>
+                            <button type="button" class="btn btn-info">Edit</button>
+                            <button type="button" class="btn btn-danger">Delete</button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">C2</th>
+                        <td>Frappe</td>
+                        <td>110</td>
+                        <td>Cold</td>
+                        <td>
+                            <button type="button" class="btn btn-info">Edit</button>
+                            <button type="button" class="btn btn-danger">Delete</button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">C3</th>
+                        <td>Cold Brew</td>
+                        <td>80</td>
+                        <td>Cold</td>
+                        <td>
+                            <button type="button" class="btn btn-info">Edit</button>
+                            <button type="button" class="btn btn-danger">Delete</button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+            <div class="modal-footer">
+            <p>click add button if you want to add more item</p>
+            <button type="button" class="btn btn-primary">Add</button>
+            </div>
+        </div>
+        </div>
+    </div>
+</body>
+</html>
