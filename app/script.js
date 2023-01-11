@@ -1,5 +1,5 @@
 var orderArr = []; //dito ilagay mga napiling question by order
-var answerArr = [];
+var answerArr = [];//storage for answers
 var currentQuestion = 0;//pang ilang question na mga players
 var numOfQuestion = 3; //bilang ng question
 
@@ -26,10 +26,11 @@ function getRandomQuestion() {
 }
 
 function setAnswers() {
-  	answerArr.push("b", "c", "a");
+  	answerArr.push("Intramuros", "Japan", "June 12");
 }
 
 function clickAnswer(answer) {
+  console.log(answer);
 	let AnsForCurrentQuestion = answerArr[orderArr[currentQuestion] - 1];
 	if (AnsForCurrentQuestion == answer) {
 		alert("Correct!");
@@ -49,7 +50,14 @@ function clickAnswer(answer) {
 (function () {
 	getRandomQuestion();
 	setAnswers();
-	document.getElementById('header').innerHTML=`CATEGORY 1 (${currentQuestion+1}/${numOfQuestion})`;
+	document.getElementById('header').innerHTML=`CATEGORY 1 (${currentQuestion+1}/${numOfQuestion})`;//for header
+  let q1=['Malolos','Intramuros','Makati','Cebu'];//set choices for question 1
+  let q2=['Spain','America','Japan','China'];//set choices for question 2
+  let q3=['June 12','Dec 25','July 11','August 4'];//set choices for question 3
+  var questionNo=[q1,q2,q3];//store all of choices
+  for(var i=0;i<4;i++){//times of loop equals to number of buttons
+    document.getElementById(`choice${i+1}`).innerHTML=questionNo[orderArr[currentQuestion]-1][i];//set value from questions[choices]
+  }
 })();
 
 //when key "a" is pressed it will enable answer buttons
