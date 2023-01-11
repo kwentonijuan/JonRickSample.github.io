@@ -26,7 +26,7 @@ function getRandomQuestion() {
 }
 
 function setAnswers() {
-  	answerArr.push("Intramuros", "Japan", "June 12","Intramuros", "Japan", "June 12","Intramuros", "Japan", "June 12", "June 12");
+  	answerArr.push("Intramuros", "Japan", "June 12","1942", "Gregorio Del Pilar", "1521","Zambales", "Gemma Cruz", "Plaridel", "Rizal Park");
 }
 
 function clickAnswer(answer) {
@@ -55,13 +55,13 @@ function clickAnswer(answer) {
   let q2=['Spain','America','Japan','China'];//set choices for question 2
   let q3=['June 12','Dec 25','July 11','August 4'];//set choices for question 3
 
-  let q4=['Malolos','Intramuros','Makati','Cebu'];//set choices for question 1
-  let q5=['Spain','America','Japan','China'];//set choices for question 2
-  let q6=['June 12','Dec 25','July 11','August 4'];//set choices for question 3
-  let q7=['Malolos','Intramuros','Makati','Cebu'];//set choices for question 1
-  let q8=['Spain','America','Japan','China'];//set choices for question 2
-  let q9=['June 12','Dec 25','July 11','August 4'];//set choices for question 3
-  let q10=['June 12','Dec 25','July 11','August 4'];//set choices for question 3
+  let q4=['1890','1950','1962','1942'];//set choices for question 1
+  let q5=['Andres Bonifacio','Dr Jose Rizal','Marcelo Del Pilar','Gregorio Del Pilar'];//set choices for question 2
+  let q6=['1521','1420','1622','1823'];//set choices for question 3
+  let q7=['Cagayan','Albay','Zambales','Batanes'];//set choices for question 1
+  let q8=['Margarita Moran','Gloria Diaz','Gemma Cruz','Kylie Verzosa'];//set choices for question 2
+  let q9=['Plaridel','Gorio','Pepe','Supremo'];//set choices for question 3
+  let q10=['Bagumbayan','Rizal Park','Pook Pasyalan','Rizal Sport sComplex'];//set choices for question 3
 
   var questionNo=[q1,q2,q3,q4,q5,q6,q7,q8,q9,q10];//store all of choices
   for(var i=0;i<4;i++){//times of loop equals to number of buttons
