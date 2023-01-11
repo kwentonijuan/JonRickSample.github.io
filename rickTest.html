@@ -6,14 +6,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    
+    <div class="container-lg d-flex flex-column">
+        <div class="row d-flex justify-content-between m-0 my-2" style="min-height: 65px;">
+            <div class="bg-primary col-3 rounded-pill d-flex flex-row justify-content-evenly p-1">
+                <div class="btn btn-outline-light col-3 rounded-pill d-flex justify-content-center align-items-center">Player 1</div>
+                <div class="btn btn-outline-light col-6 rounded-pill d-flex justify-content-center align-items-center">Score: 0</div>
+            </div>
+            <div class="bg-primary col-5 rounded-pill d-flex justify-content-center align-items-center fs-1 text-light">CATEGORY 1 (1/10)</div>
+            <div class="bg-primary col-3 rounded-pill d-flex flex-row justify-content-evenly p-1">
+                <div class="btn btn-outline-light col-3 rounded-pill d-flex justify-content-center align-items-center">Player 2</div>
+                <div class="btn btn-outline-light col-6 rounded-pill d-flex justify-content-center align-items-center">Score: 0</div>
+            </div>
+        </div>
 
+        <div id="carouselExample" class="carousel slide carousel-fade">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="" class="d-block w-100 rounded-pill opacity-75" alt="..." id="show1">
+                </div>
+                <div class="carousel-item">
+                    <img src="" class="d-block w-100 rounded-pill opacity-75" alt="..." id="show2">
+                </div>
+                <div class="carousel-item">
+                    <img src="" class="d-block w-100 rounded-pill opacity-75" alt="..." id="show3">
+                </div>
+            </div>
+        </div>
 
-
-    <!-- script -->
+        <div class="row d-flex m-0" style="height: 210px">
+            <div class="d-flex justify-content-center align-items-center col-6 m-0 p-0">
+                <button id="choice1" class="btn btn-primary w-75 h-75 rounded-pill" disabled="true" onclick="clickAnswer('a')">answer 1</button>
+            </div>
+            <div class="d-flex justify-content-center align-items-center col-6 m-0 p-0">
+                <button id="choice2" class="btn btn-primary w-75 h-75 rounded-pill" disabled="true" onclick="clickAnswer('b')">answer 2</button>
+            </div>
+            <div class="d-flex justify-content-center align-items-center col-6 m-0 p-0">
+                <button id="choice3" class="btn btn-primary w-75 h-75 rounded-pill" disabled="true" onclick="clickAnswer('c')">answer 3</button>
+            </div>
+            <div class="d-flex justify-content-center align-items-center col-6 m-0 p-0">
+                <button id="choice4" class="btn btn-primary w-75 h-75 rounded-pill" disabled="true" onclick="clickAnswer('d')">answer 4</button>
+            </div>
+        </div>
+    </div>
+    <script src="/app/rickTest.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </body>
 </html>
