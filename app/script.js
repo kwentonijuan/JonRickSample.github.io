@@ -18,7 +18,7 @@ function getRandomQuestion() {
   }
   //ilagay na mga questions sa img element
   for (var i = 0; i < orderArr.length; i++) {
-    document.getElementById(`show${i + 1}`).src = `/images/q${orderArr[i]}.jpg`;
+    document.getElementById(`show${i + 1}`).src = `/image/q${orderArr[i]}.jpg`;
   }
   //console.log(orderArr);
 }
@@ -54,8 +54,7 @@ window.addEventListener("keypress", (e) => {
     document.getElementById("choice2").disabled = false;
     document.getElementById("choice3").disabled = false;
     document.getElementById("choice4").disabled = false;
-  }
-  else if (e.key == "l") {
+  } else if (e.key == "l") {
     console.log("You Pressed A");
     alert("Player 2! Choose your answer!");
     document.getElementById("choice1").disabled = false;
