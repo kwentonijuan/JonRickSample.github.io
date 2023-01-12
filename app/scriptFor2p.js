@@ -79,7 +79,7 @@ function ifDone(message){
 		}else{
 			alert(`${message}\nTie (draw)`);
 		}
-		window.location.replace("/pages/categories.html");
+		window.location.replace("/pages/category.html");
 	} else {
 		if(tries==2){
 			message+=" Let's go to the next question!";
