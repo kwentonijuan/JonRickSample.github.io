@@ -11,15 +11,11 @@
 <body>
     <div class="container-lg d-flex flex-column">
         <div class="row d-flex justify-content-between m-0 my-2" style="min-height: 65px;">
-            <div class="mt-1 bg-primary order-2 order-lg-1 col-12 col-lg-3 rounded-pill d-flex flex-row justify-content-evenly p-1">
+            <div class="mt-1 bg-primary order-2 order-lg-1 col-sm-12 col-lg-3 rounded-pill d-flex flex-row justify-content-evenly p-1">
                 <div class="btn btn-outline-light col-3 rounded-pill d-flex justify-content-center align-items-center">Player 1</div>
-                <div id="score1" class="btn btn-outline-light col-6 rounded-pill d-flex justify-content-center align-items-center">Score: 0</div>
+                <div id="p1score" class="btn btn-outline-light col-6 rounded-pill d-flex justify-content-center align-items-center"></div>
             </div>
             <div id="header" class="mt-1 order-1 order-lg-2 bg-primary col-lg-5 rounded-pill d-flex justify-content-center align-items-center fs-1 text-light">CATEGORY 1 (1/10)</div>
-            <div class="mt-1   order-3 order-lg-3 col-6 col-lg-3 rounded-pill d-flex flex-row justify-content-evenly p-1">
-                <!-- <div class="btn btn-outline-light col-3 rounded-pill d-flex justify-content-center align-items-center">Player 2</div>
-                <div id="score2" class="btn btn-outline-light col-6 rounded-pill d-flex justify-content-center align-items-center">Score: 0</div> -->
-            </div>
         </div>
 
         <div id="carouselExample" class="carousel slide carousel-fade" data-bs-touch="false">
@@ -57,22 +53,22 @@
             </div>
         </div>
 
-        <div class="row d-flex m-0" style="height: 210px">
-            <div class="d-flex justify-content-center align-items-center col-lg-6 m-0 p-0">
-                <button id="choice1" class="btn btn-primary w-75 h-75   rounded-pill" onclick="clickAnswer(this.id)">answer 1</button>
+        <div class="row d-flex m-0 mt-2">
+            <div class="d-flex justify-content-center align-items-center col-sm-12 col-md-6 my-2">
+                <button id="choice1" class="btn btn-primary w-75 rounded-pill" onclick="clickAnswer(this.id)" style="min-height: 80px;">answer 1</button>
             </div>
-            <div class="d-flex justify-content-center align-items-center col-lg-6 m-0 p-0">
-                <button id="choice2" class="btn btn-primary w-75 h-75 rounded-pill" onclick="clickAnswer(this.id)">answer 2</button>
+            <div class="d-flex justify-content-center align-items-center col-sm-12 col-md-6 my-2">
+                <button id="choice2" class="btn btn-primary w-75 rounded-pill" onclick="clickAnswer(this.id)" style="min-height: 80px;">answer 2</button>
             </div>
-            <div class="d-flex justify-content-center align-items-center col-lg-6 m-0 p-0">
-                <button id="choice3" class="btn btn-primary w-75 h-75 rounded-pill" onclick="clickAnswer(this.id)">answer 3</button>
+            <div class="d-flex justify-content-center align-items-center col-sm-12 col-md-6 my-2">
+                <button id="choice3" class="btn btn-primary w-75 rounded-pill" onclick="clickAnswer(this.id)" style="min-height: 80px;">answer 3</button>
             </div>
-            <div class="d-flex justify-content-center align-items-center col-lg-6 m-0 p-0">
-                <button id="choice4" class="btn btn-primary w-75 h-75 rounded-pill" onclick="clickAnswer(this.id)">answer 4</button>
+            <div class="d-flex justify-content-center align-items-center col-sm-12 col-md-6 my-2">
+                <button id="choice4" class="btn btn-primary w-75 rounded-pill" onclick="clickAnswer(this.id)" style="min-height: 80px;">answer 4</button>
             </div>
         </div>
     </div>
-    <script src="/app/script.js"></script>
+    <script src="/app/scriptFor1p.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </body>
 </html>

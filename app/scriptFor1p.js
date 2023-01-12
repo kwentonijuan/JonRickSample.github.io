@@ -40,49 +40,38 @@ function clickAnswer(idOfAnswer) {
 		if(answerer=="Player 1"){//player1
 			p1score++;
 			document.getElementById('p1score').innerHTML="Score: "+p1score;
-		} else {//player2
-			p2score++;
-			document.getElementById('p2score').innerHTML="Score: "+p2score;
 		}
 		ifDone("Correct!");
 	} else {
 		tries++;
 		if(tries==2){
-			currentQuestion++;
-			ifDone(`Wrong too!`);
+            currentQuestion++;
+			ifDone("Wrong too!");
 		} else {
-			if(answerer=="Player 1"){
-				alert("Player 1 is wrong!\nPlayer 2's turn, Choose your answer!");
-				answerer="Player 2";
-			} else {
-				alert("Player 2 is wrong!\nPlayer 1's turn, Choose your answer!");
-				answerer="Player 1";
-			}
+			alert("Wrong! One more chance.\nPlease try again!");
 		}
 	}
 }
 
 function ifDone(message){
-	if(currentQuestion==numOfQuestion){
-		if(p1score>p2score){
-			alert(`${message}\nPlayer 1 wins`);
-		}else if(p1score<p2score){
-			alert(`${message}\nPlayer 2 wins`);
-		}else{
-			alert(`${message}\nTie (draw)`);
-		}
-		window.location.replace("/pages/categories.html");
-	} else {
-		if(tries==2){
+    if(currentQuestion==numOfQuestion){
+        if(p1score>4){
+            alert(`${message}!\nScore: ${p1score}\nYou Passed!`);
+        }else if(p1score<5){
+            alert(`${message}!\nScore: ${p1score}\nYou Failed!`);
+        }
+        window.location.replace("/pages/categories.html");
+    } else {
+        if(tries==2){
 			message+=" Let's go to the next question!";
 		}
-		alert(message);
-		nextQuestion();
-	}
+        alert(message);
+        nextQuestion();
+    }
 }
 
 function nextQuestion(){
-	enable();
+	// enable();
 	tries=0;
 	const carousel = new bootstrap.Carousel("#carouselExample");
 	carousel.next();
@@ -107,47 +96,47 @@ function setChoicesPerQuestion(){
 	questionNo.push(q1,q2,q3,q4,q5,q6,q7,q8,q9,q10);//store all of choices to global variable
 }
 
-function disable(){
-	document.onkeydown = function () 
-	{
-	return false;
-	}
-}
+// function disable(){
+// 	document.onkeydown = function () 
+// 	{
+// 	return false;
+// 	}
+// }
 
-function enable(){
-	document.getElementById("choice1").disabled = true;
-	document.getElementById("choice2").disabled = true;
-	document.getElementById("choice3").disabled = true;
-	document.getElementById("choice4").disabled = true;
-	document.onkeydown = function () 
-	{
-	return true;
-	}
-}
+// function enable(){
+// 	document.getElementById("choice1").disabled = true;
+// 	document.getElementById("choice2").disabled = true;
+// 	document.getElementById("choice3").disabled = true;
+// 	document.getElementById("choice4").disabled = true;
+// 	document.onkeydown = function () 
+// 	{
+// 	return true;
+// 	}
+// }
 
-function buzzerButton(player){
-	answerer=player;
-	alert(`${answerer}! Choose your answer!`);
-	document.getElementById("choice1").disabled = false;
-	document.getElementById("choice2").disabled = false;
-	document.getElementById("choice3").disabled = false;
-	document.getElementById("choice4").disabled = false;
-	disable();
-}
+// function buzzerButton(player){
+// 	answerer=player;
+// 	alert(`${answerer}! Choose your answer!`);
+// 	document.getElementById("choice1").disabled = false;
+// 	document.getElementById("choice2").disabled = false;
+// 	document.getElementById("choice3").disabled = false;
+// 	document.getElementById("choice4").disabled = false;
+// 	disable();
+// }
 
-window.addEventListener("keypress", (e) => {
-    // enable();
-	if(e.key === "a"){
-		console.log("You Pressed a");
-		answerer="Player 1";
-		buzzerButton(answerer);
-    } 
-    else if(e.key === "j"){
-		console.log("You Pressed J");
-		answerer="Player 2";
-		buzzerButton(answerer);
-    }
-});
+// window.addEventListener("keypress", (e) => {
+//     // enable();
+// 	if(e.key === "a"){
+// 		console.log("You Pressed a");
+// 		answerer="Player 1";
+// 		buzzerButton(answerer);
+//     } 
+//     else if(e.key === "j"){
+// 		console.log("You Pressed J");
+// 		answerer="Player 2";
+// 		buzzerButton(answerer);
+//     }
+// });
 
 (function () {
 	getRandomQuestion();
@@ -160,5 +149,4 @@ window.addEventListener("keypress", (e) => {
 	}
 	document.getElementById('header').innerHTML=`CATEGORY 1 (${currentQuestion+1}/${numOfQuestion})`;//for header
 	document.getElementById('p1score').innerHTML="Score: "+p1score;
-	document.getElementById('p2score').innerHTML="Score: "+p2score;
 })();
