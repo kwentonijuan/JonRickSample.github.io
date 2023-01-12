@@ -1,11 +1,14 @@
 var orderArr = []; //dito ilagay mga napiling question by order
-var answerArr = [];//storage for answers
+var ansKasaysayan = [];//storage for answers
+var ansWebdev = [];//storage for answers
 var currentQuestion = 0;//pang ilang question na mga players
 var numOfQuestion = 10; //bilang ng question
-var questionNo=[];//store choices of each question, will be a nested array
+var kasaysayan=[];//store questions of each category, will be a nested array
+var webdev=[];//store questions of each category, will be a nested array
 var p1score=0, p2score=0;
 var answerer="Player 1";//p1 or p2
 var tries=0;//limited to two tries per question
+var category="";//category array that contains questions
 
 function getRandomQuestion() {
 	var questionArr = []; //container ng questions
@@ -22,19 +25,24 @@ function getRandomQuestion() {
 		orderArr.push(pickedQuestion[0]); //yung napiling question ilagay sa array(container), kung ano una sa array ayun din unang question
 	}
 	//ilagay na mga questions sa img element
+	let categoryImg=(category=="history")?"q":"T";
 	for (var i = 0; i < orderArr.length; i++) {
-		document.getElementById(`show${i + 1}`).src = `/image/q${orderArr[i]}.jpg`;
+		document.getElementById(`show${i + 1}`).src = `/image/${categoryImg}${orderArr[i]}.jpg`;
 	}
 	//console.log(orderArr);
 }
 
 function setAnswers() {
-  	answerArr.push("Intramuros", "Japan", "June 12","1942", "Gregorio Del Pilar", "1521","Albay", "Gemma Cruz", "Plaridel", "Rizal Park");
+  	ansKasaysayan.push("Intramuros", "Japan", "June 12","1942", "Gregorio Del Pilar", "1521","Albay", "Gemma Cruz", "Plaridel", "Rizal Park");
+	ansWebdev.push('Web Development','Web Server','Inline','Web Designer','<hr>','Declaration','Property','Cybersecurity','Angle Brackets','Body');
 }
 
 function clickAnswer(idOfAnswer) {
   	let answer=document.getElementById(idOfAnswer).innerHTML;
-	let AnsForCurrentQuestion = answerArr[orderArr[currentQuestion] - 1];
+	let AnsForCurrentQuestion =
+		(category==history)?
+			ansKasaysayan[orderArr[currentQuestion] - 1]:
+			ansWebdev[orderArr[currentQuestion] - 1];
 	if (AnsForCurrentQuestion == answer) {
 		currentQuestion++;
 		if(answerer=="Player 1"){//player1
@@ -86,10 +94,15 @@ function nextQuestion(){
 	tries=0;
 	const carousel = new bootstrap.Carousel("#carouselExample");
 	carousel.next();
-	document.getElementById('header').innerHTML=`CATEGORY 1 (${currentQuestion+1}/${numOfQuestion})`;
+	let categoryHead=(category=="history")?"HISTORY":"WEBDEV";
+	document.getElementById('header').innerHTML=`${categoryHead} (${currentQuestion+1}/${numOfQuestion})`;
 	//times of loop equals to number of buttons
+	//set value from questions[choices]
 	for(var i=0;i<4;i++){
-		document.getElementById(`choice${i+1}`).innerHTML=questionNo[orderArr[currentQuestion]-1][i];//set value from questions[choices]
+		document.getElementById(`choice${i+1}`).innerHTML=
+			(category=="history")?
+			kasaysayan[orderArr[currentQuestion]-1][i]:
+			webdev[orderArr[currentQuestion]-1][i];
 	}
 }
 
@@ -104,7 +117,20 @@ function setChoicesPerQuestion(){
 	let q8=['Margarita Moran','Gloria Diaz','Gemma Cruz','Kylie Verzosa'];//set choices for question 8
 	let q9=['Plaridel','Gorio','Pepe','Supremo'];//set choices for question 9
 	let q10=['Bagumbayan','Rizal Park','Pook Pasyalan','Rizal Sports Complex'];//set choices for question 10
-	questionNo.push(q1,q2,q3,q4,q5,q6,q7,q8,q9,q10);//store all of choices to global variable
+
+	let T1=['Website','Web Design','Web Page','Web Development'];
+	let T2=['Browser','Publisher','Web Server','Notepad ++'];
+	let T3=['Internal','Style','External','Inline'];
+	let T4=['Web Designer','Web Developer','Programmer','Computer Scientist'];
+	let T5=['line','shape','hr','space'];
+	let T6=['Declaration','Selector','Property','Value'];
+	let T7=['Declaration','Selector','Property','Value'];
+	let T8=['Cybersecurity','Netiquette','Rules','Guidelines'];
+	let T9=['Wickets','Angle Brackets','French braces','Parentheses'];
+	let T10=['Body','Style','Html','Head'];
+
+	kasaysayan.push(q1,q2,q3,q4,q5,q6,q7,q8,q9,q10);//store all of choices to global variable
+	webdev.push(T1,T2,T3,T4,T5,T6,T7,T8,T9,T10);//store all of choices to global variable
 }
 
 function disable(){
@@ -150,15 +176,24 @@ window.addEventListener("keypress", (e) => {
 });
 
 (function () {
+	var queryString = window.location.search;
+    var urlParams = new URLSearchParams(queryString);
+    category = urlParams.get('category');
+
 	getRandomQuestion();
 	setAnswers();
 	setChoicesPerQuestion();
-	
+	console.log(webdev);
 	//set UI to default value
 	for(var i=0;i<4;i++){//times of loop equals to number of buttons
-		document.getElementById(`choice${i+1}`).innerHTML=questionNo[orderArr[currentQuestion]-1][i];//set value from questions[choices]
+		//set value from questions[choices]
+		document.getElementById(`choice${i+1}`).innerHTML=
+			(category=="history")?
+			kasaysayan[orderArr[currentQuestion]-1][i]:
+			webdev[orderArr[currentQuestion]-1][i];
 	}
-	document.getElementById('header').innerHTML=`CATEGORY 1 (${currentQuestion+1}/${numOfQuestion})`;//for header
+	let categoryHead=(category=="history")?"HISTORY":"WEBDEV";
+	document.getElementById('header').innerHTML=`${categoryHead} (${currentQuestion+1}/${numOfQuestion})`;//for header
 	document.getElementById('p1score').innerHTML="Score: "+p1score;
 	document.getElementById('p2score').innerHTML="Score: "+p2score;
 })();
